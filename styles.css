@@ -71,10 +71,12 @@ header nav a:hover {
     background-color: white;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .about-content {
     display: flex;
+    flex-direction: row;
     max-width: 1200px;
     align-items: center;
     animation: fadeInUp 1s ease-in-out;
@@ -215,6 +217,43 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        margin: 0 auto 20px;
+    }
+
+    .bio {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .contact-info {
+        width: 90%;
+    }
 }
 
 /* Animations */

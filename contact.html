@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Harsh Rathi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,16 +18,35 @@
 
     <section class="contact">
         <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:rathiiiharsh@gmail.com">rathiiiharsh@gmail.com</a></p>
-            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/haarshrathi1" target="_blank">Visit My GitHub</a></p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/haarshrathi/" target="_blank">Connect on LinkedIn</a></p>
-            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/9574288197" target="_blank">Send a Message</a></p>
+        <p>If you’d like to get in touch, feel free to use any of the options below. I look forward to hearing from you!</p>
+
+        <div class="contact-container">
+            <!-- Contact Info Section -->
+            <div class="contact-info card">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:rathiiiharsh@gmail.com">rathiiiharsh@gmail.com</a></p>
+                <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/haarshrathi1" target="_blank">Visit My GitHub</a></p>
+                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/haarshrathi/" target="_blank">Connect on LinkedIn</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/9574288197" target="_blank">Send a Message</a></p>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="contact-form card">
+                <h3>Send Me a Message</h3>
+                <form action="mailto:rathiiiharsh@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Harsh Rathi</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

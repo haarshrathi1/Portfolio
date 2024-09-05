@@ -12,7 +12,15 @@ header {
     color: white;
     padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Space between brand and links */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 header nav a {
@@ -106,7 +114,7 @@ header nav a:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
     gap: 20px;
     max-width: 600px;
     margin: auto;
@@ -305,22 +313,34 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .projects .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* About Section - Stack vertically */
     .about-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack image and text vertically */
         align-items: center;
+        text-align: center;
     }
 
     .profile-img {
-        margin: 0 0 20px 0;
-        width: 150px;
+        margin: 0 0 20px 0; /* Adjust margin for mobile */
+        width: 150px; /* Make profile image smaller */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Stack skills vertically */
+    }
+
+    .skill {
+        text-align: center; /* Center skills text and icon */
+        padding: 15px;
+    }
+
+    .skill i {
+        font-size: 2.5rem; /* Decrease icon size for smaller screens */
+        margin-bottom: 10px;
+    }
+
+    .skills {
+        padding: 20px 0; /* Reduce padding for mobile */
     }
 
     .hero {
@@ -328,17 +348,26 @@ footer {
     }
 
     .cta-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        font-size: 0.9rem; /* Make button text smaller */
+        padding: 8px 16px; /* Adjust padding */
     }
 
     header {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    header nav {
+        width: 100%; /* Take up the full width */
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
     }
 
     header nav a {
-        margin: 5px 0;
+        padding: 10px 0; /* Increase spacing between links */
+        display: block; /* Make links stack vertically */
+        text-align: center; /* Center text on smaller screens */
     }
 
     footer {
@@ -384,4 +413,5 @@ footer {
         opacity: 1;
     }
 }
+
 

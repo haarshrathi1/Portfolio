@@ -373,6 +373,20 @@ footer {
     footer {
         padding: 20px;
     }
+
+    /* Contact Page - Stack form and info vertically */
+    .contact-container {
+        flex-direction: column; /* Stack contact info and form */
+    }
+
+    .contact-info, .contact-form {
+        width: 100%; /* Full width for each section on mobile */
+        margin-bottom: 20px; /* Add more space between sections */
+    }
+
+    .contact {
+        padding: 20px; /* Adjust padding for mobile */
+    }
 }
 
 /* Animations */

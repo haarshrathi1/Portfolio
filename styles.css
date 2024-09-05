@@ -203,11 +203,11 @@ footer {
 
 /* Contact Page Styles */
 .contact {
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Aligns items vertically */
-    justify-content: center; /* Centers items vertically */
-    align-items: center; /* Centers items horizontally */
-    min-height: 100vh; /* Ensures the section takes up the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 60px 20px;
     background-color: #f8f9fa;
     text-align: center;
@@ -228,20 +228,20 @@ footer {
 /* Center the contact containers */
 .contact-container {
     display: flex;
-    flex-direction: column; /* Stack the sections vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 600px; /* Limit the width of the content */
-    width: 100%; /* Ensure the content takes full width on smaller screens */
-    margin: 0 auto; /* Horizontally center the container */
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .contact-info, .contact-form {
     background-color: white;
     padding: 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Increased shadow for more depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 100%; /* Full width for each section */
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -305,16 +305,46 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .contact-container {
-        width: 100%;
+    .projects .project-grid {
+        grid-template-columns: 1fr;
     }
 
-    .contact-info, .contact-form {
-        width: 100%;
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        margin: 0 0 20px 0;
+        width: 150px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 5px 0;
+    }
+
+    footer {
+        padding: 20px;
     }
 }
-
-
 
 /* Animations */
 @keyframes fadeIn {
@@ -354,3 +384,4 @@ footer {
         opacity: 1;
     }
 }
+

@@ -15,6 +15,9 @@ header {
     justify-content: space-between; /* Space between brand and links */
     align-items: center;
     flex-wrap: wrap; /* Allow wrapping on small screens */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures header is above other content */
 }
 
 header nav {
@@ -160,21 +163,52 @@ header nav a:hover {
 .project {
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.project h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #3498db;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures nothing spills out */
+    position: relative; /* For positioning the overlay */
 }
 
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add depth to hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for text visibility */
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project:hover .project-info {
+    transform: translateY(0);
+}
+
+.project h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.project p {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Footer */
@@ -302,7 +336,7 @@ footer {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight:bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -359,7 +393,7 @@ footer {
 
     header nav {
         width: 100%; /* Take up the full width */
-        display: flex;
+        display:flex;
         justify-content: space-around;
         margin-top: 10px;
     }
@@ -427,5 +461,3 @@ footer {
         opacity: 1;
     }
 }
-
-

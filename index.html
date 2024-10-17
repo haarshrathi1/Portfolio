@@ -2,94 +2,144 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Harsh Rathi - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Rathi - Web Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Harsh Rathi's portfolio showcasing innovative web solutions, projects, and contact information.">
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords" content="Harsh Rathi, Portfolio, Web Developer, Projects, Contact">
+    <!-- Meta Author -->
+    <meta name="author" content="Harsh Rathi">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- AOS Library for Animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
+        <div class="logo">Harsh Rathi</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Harsh Rathi</h1>
-        <p>Creating Beautiful and Functional Web Experiences</p>
-        <a href="#about" class="cta-button">Learn More About Me</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Creating <span class="highlight">Innovative</span> Web Solutions</h1>
+            <p>I'm a web developer specializing in crafting exceptional digital experiences.</p>
+            <a href="#projects" class="btn primary-btn">View My Work</a>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1000">
+            <span></span>
+        </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="about-content">
-            <img src="./profile.jpg" alt="Harsh Rathi" class="profile-img" style="width: 200px; height: auto;">
-            <div class="bio">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-image" data-aos="fade-right">
+                <!-- Profile Image -->
+                <img src="profile.jpg" alt="Harsh Rathi">
+            </div>
+            <div class="about-text" data-aos="fade-left">
                 <h2>About Me</h2>
-                <p>Hi, I'm Harsh Rathi, a BCA student with a passion for web development. I specialize in creating clean, responsive, and functional websites. I love taking on new challenges and staying updated with the latest trends.</p>
+                <p>I'm Harsh Rathi, a passionate web developer with expertise in creating responsive and user-friendly websites. I enjoy solving complex problems and turning ideas into reality.</p>
+                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
             </div>
         </div>
     </section>
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill">
-                <i class="fab fa-html5"></i>
-                <p>HTML</p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2 data-aos="fade-down">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="shakti.png" alt="COMIC Project">
+                </div>
+                <div class="project-info">
+                    <h3>COMIC</h3>
+                    <p>Comic book style website created with HTML and CSS.</p>
+                    <a href="https://haarshrathi1.github.io/shakti/" class="btn">View Project</a>
+                </div>
             </div>
-            <div class="skill">
-                <i class="fab fa-css3-alt"></i>
-                <p>CSS</p>
+            <!-- Project Card 2 -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="project-image">
+                    <img src="chat-room.png" alt="Chat-Room Project">
+                </div>
+                <div class="project-info">
+                    <h3>Chat-Room</h3>
+                    <p>An anonymous chat room where users don't need to provide personal details. Made with HTML, CSS, JS, and Node.js.</p>
+                    <a href="https://haarshrathi1.github.io/chat-room/" class="btn">View Project</a>
+                </div>
             </div>
-            <div class="skill">
-                <i class="fab fa-js"></i>
-                <p>JavaScript</p>
+            <!-- Project Card 3 -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="600">
+                <div class="project-image">
+                    <img src="image.png" alt="COMIC 2 Project">
+                </div>
+                <div class="project-info">
+                    <h3>COMIC 2</h3>
+                    <p>New comic-style website with a fresh story and animations.</p>
+                    <a href="https://haarshrathi1.github.io/Rishikesh-Revelry/" class="btn">View Project</a>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    <section class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <a href="https://haarshrathi1.github.io/shakti/" class="project" target="_blank">
-                <img src="shakti.png" alt="Shakti Comic Site">
-                <div class="project-info">
-                    <h3>Shakti Comic Site</h3>
-                    <p>A visually engaging website designed to reflect the style of a comic book.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 data-aos="fade-down">Contact Me</h2>
+        <div class="contact-container">
+            <form id="contact-form" data-aos="zoom-in">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Your Name</label>
                 </div>
-            </a>
-            <a href="https://haarshrathi1.github.io/College-website-gurukul/" class="project" target="_blank">
-                <img src="project.png" alt="Gurukul College Website">
-                <div class="project-info">
-                    <h3>Gurukul College Website</h3>
-                    <p>A professional and informative website for a college.</p>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Your Email</label>
                 </div>
-            </a>
-            <a href="https://haarshrathi1.github.io/chat-room/" class="project" target="_blank">
-                <img src="chat-room.png" alt="Chat Room Application">
-                <div class="project-info">
-                    <h3>Chat Room Application</h3>
-                    <p>A simple and functional chat room application.</p>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                    <label for="message">Your Message</label>
                 </div>
-            </a>
-            <a href="https://pacific-garden-50488-a393bb99ecd0.herokuapp.com/" class="project" target="_blank">
-                <img src="doc-chat.png" alt="Secure Chat">
-                <div class="project-info">
-                    <h3>Secure Chat</h3>
-                    <p>A secure and private online chat system hosted on Heroku.</p>
-                </div>
-            </a>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Harsh Rathi</p>
+        <div class="social-links">
+            <a href="https://github.com/yourgithubusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourlinkedinusername" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourtwitterusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/919574288197" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 Harsh Rathi. All rights reserved.</p>
     </footer>
 
+    <!-- AOS Library JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>

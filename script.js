@@ -1,57 +1,60 @@
-// Ensuring the DOM is fully loaded before running scripts
-document.addEventListener('DOMContentLoaded', function () {
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
 
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            let target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('header ul');
+    const navLinkItems = document.querySelectorAll('header ul li a');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
         });
     });
 
-    // Scroll-to-top button functionality
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.textContent = '⬆️'; // Or use an icon
-    scrollToTopBtn.classList.add('scroll-to-top');
-    document.body.appendChild(scrollToTopBtn);
+    // Sticky Navigation Header
+    const header = document.querySelector('header');
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('visible');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
         } else {
-            scrollToTopBtn.classList.remove('visible');
+            header.classList.remove('scrolled');
         }
     });
 
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+    // Form Submission Handling - Redirect to WhatsApp
+    const contactForm = document.getElementById('contact-form');
 
-    // Fade-in animation on scroll
-    window.addEventListener('scroll', function () {
-        const fadeIns = document.querySelectorAll('.fade-in');
-        fadeIns.forEach(fadeIn => {
-            if (fadeIn) {
-                const position = fadeIn.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight / 1.5;
-                if (position < windowHeight) {
-                    fadeIn.classList.add('visible');
-                }
-            }
-        });
-    });
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-    // Text reveal animation - now safely checking if the element exists
-    const animatedText = document.querySelector('.animated-text');
-    if (animatedText) {
-        animatedText.classList.add('visible');
-    }
+        // Construct WhatsApp message
+        const whatsappMessage = `Hello Harsh,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(message)}`;
+
+        // WhatsApp API URL
+        const whatsappURL = `https://wa.me/919574288197?text=${whatsappMessage}`;
+
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
+
+        // Optionally, reset the form
+        contactForm.reset();
+    });
 });

@@ -71,11 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Construct WhatsApp message
-        const whatsappMessage = `Hello Harsh,%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+        // Construct WhatsApp message and encode it once
+        const rawMessage = `Hello Harsh,\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
         // WhatsApp API URL
-        const whatsappURL = `https://wa.me/919574288197?text=${whatsappMessage}`;
+        const whatsappURL = `https://wa.me/919574288197?text=${encodeURIComponent(rawMessage)}`;
 
         // Redirect to WhatsApp
         window.open(whatsappURL, '_blank');
